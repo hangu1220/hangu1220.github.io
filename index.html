@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김한구의 홈페이지</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; }
+        header { background-color: #111; color: #fff; padding: 20px 0; text-align: center; }
+        nav { background-color: #222; display: flex; justify-content: center; }
+        nav a { color: #fff; padding: 12px 18px; text-decoration: none; text-transform: uppercase; }
+        nav a.active, nav a:hover { background-color: #1e90ff; color: #000; transition: 0.3s; }
+        section { display: none; padding: 30px 20px; max-width: 900px; margin: auto; background: #111; box-shadow: 0 0 10px rgba(255,255,255,0.1); border-radius: 8px; }
+        section.active { display: block; }
+        .icon-image {width: 161px;height: 100px;object-fit: cover;vertical-align: middle;margin-right: 10px;}
+        li {margin-bottom: 10px;}
+        img.profile { width: 280px;  display: block; margin: 20px auto; border: 3px solid #fff; }
+        footer { text-align: center; padding: 15px; background-color: #222; color: #fff; position: fixed; width: 100%; bottom: 0; font-size: 0.9em; }
+        h1, h2 { color: #fff; }
+        a { color: #1e90ff; }
+        @media (max-width: 600px) {
+            nav { flex-direction: column; }
+            nav a { text-align: center; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>김한구의 홈페이지</h1>
+</header>
+
+<nav>
+    <a href="#about" onclick="showPage('about', this)" class="active">About</a>
+    <a href="#portfolio" onclick="showPage('portfolio', this)">Portfolio</a>
+    <a href="#contact" onclick="showPage('contact', this)">Contact</a>
+</nav>
+
+<section id="about" class="active">
+    <h2></h2>
+    <img src="IMG_8376.jpg" alt="내 사진" class="profile">
+    <p>안녕하세요! 저는 웹 개발을 배우고 있는 202211272 김한구입니다. 새로운 기술을 배우고 그걸 이용해 프로젝트를 만드는 것을 좋아합니다.</p>
+</section>
+
+<section id="portfolio">
+    <h2>자기소개</h2>
+    
+    <h3>학력</h3>
+    <ul>
+    <li><img src="school1.png" alt="초등학교" class="icon-image"> 풍덕초등학교 졸업 (2015)</li>
+    <li><img src="school2.png" alt="중학교" class="icon-image"> 손곡중학교 졸업 (2018)</li>
+    <li><img src="school3.png" alt="고등학교" class="icon-image"> 용인고등학교 졸업 (2021)</li>
+    <li><img src="university.png" alt="대학교" class="icon-image"> 강원대학교 재학 중 (전공: 컴퓨터공학)</li>
+    </ul>
+
+    <h3>경험</h3>
+    <ul>
+    <li><img src="cafe.png" alt="편의점 알바" class="icon-image"> 편의점 알바 (2022~2024): 고객 응대, 매장 관리</li>
+    </ul>
+
+    <h3>취미</h3>
+    <ul>
+    <li><img src="movie.png" alt="영화" class="icon-image"> 영화 감상</li>
+    <li><img src="walk.png" alt="수면" class="icon-image"> 수면</li>
+    <li><img src="game.png" alt="게임" class="icon-image"> 게임</li>
+    </ul>
+
+    
+</section>
+
+<section id="contact">
+    <h2>연락처</h2>
+    <p>문의나 연락은 이메일로 보내주세요: <a href="mailto:daniel9843@naver.com">daniel9843@naver.com</a></p>
+</section>
+
+
+
+<script>
+    function showPage(pageId, element) {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        
+        navLinks.forEach(link => link.classList.remove('active'));
+        element.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
